@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrativa Interativa</title>
+    <!-- Links para o Google Fonts icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <!-- Container de Configurações do Quiz-->
+    <div class="config-container">
+        <h2 class="config-title">Narrativa Interativa</h2>
+        
+        <div class="config-option">
+            <h4 class="option-title">Selecione a Categoria</h4>
+            <div class = "category-options">
+                <button class="category-option active">Literatura </button>
+                <button class="category-option">Português</button>
+                <button class="category-option">XXXXX</button>
+            </div>
+        </div>
+
+        <div class="config-option">
+            <h4 class="option-title">Número de Perguntas</h4>
+            <div class = "question-options">
+                <button class="question-option">5</button>
+                <button class="question-option">10</button>
+                <button class="question-option">15</button>
+                <button class="question-option">20</button>
+            </div>
+        </div>
+
+        <button class="start-quiz-button">Entrar</button>
+    </div>
+    
+    <!-- Container do Quiz -->
+    <div class="quiz-container">
+    <header class = "quiz-header">
+        <h2 class="qiz-title">Quiz Narrativa Interativa</h2>
+        <div class="quiz-timer">
+            <span class="material-symbols-rounded">timer</span>
+            <p class="time-duration">15 </p>
+        </div>
+    </header>
+    <div class="quiz-content">
+        <h1 class="question-text">O que caracteriza um narrador em uma história?</h1>
+        <ul class="answer-options">
+            <li class="answer-option ">
+                <p>Ele não cria os personagens.</p>
+                 <span class="material-symbols-rounded">cancel</span>
+            </li>
+            <li class="answer-option ">
+                <p>O narrador não é apenas um espectador.</p>
+                <span class="material-symbols-rounded">cancel</span>
+            </li>
+            <li class="answer-option incorrect">
+                <p>O narrador pode ter opniões sobre os acontecimentos.</p>
+                <span class="material-symbols-rounded">cancel</span>
+            </li>
+            <li class="answer-option correct">
+                <p>O narrador é quem conta a história.</p>
+                <span class="material-symbols-rounded">check_circle</span>
+            </li>
+        </ul>
+        </div> 
+
+        <div class="quiz-footer">
+            <p class="question-status"><b>2</b> de <b>10</b> Questões </p>
+            <button class="next-question-btn">Próxima
+                <span class="material-symbols-rounded">arrow_right_alt</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Container de Resultados-->
+    <div class="result-container">
+        <img src="https://imagepng.org/wp-content/uploads/2017/10/estrela-1.png" class="result-img">
+        <h2 class="result-title">Quiz Concluído</h2>
+        <p class="result-message"> Você Acertou <b>3</b> das <b>8</b> questões e ganhou as <b>3</b> estrelas! </p>
+        <button class="try-again-btn">Tente de Novo</button>
+    </div>
+</body>
+</html>
