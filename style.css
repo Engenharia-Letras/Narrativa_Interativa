@@ -19,7 +19,7 @@ body {
 }
 
 :where(.config-container, .quiz-container, .result-container) {
-   /* display: none;*/ 
+   display: none;
     background: #F0E68C;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
@@ -106,6 +106,7 @@ body {
 }
 
 .quiz-container {
+    display: block;
     width: 480px;
 
 }
@@ -213,6 +214,7 @@ body {
 .quiz-footer .next-question-btn {
     display: inline-flex;
     gap: 5px;
+    visibility: hidden;
     align-items: center;
     padding: 9px 17px;
 
