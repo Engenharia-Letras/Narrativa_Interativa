@@ -18,11 +18,436 @@ body {
     background: #FFFACD;
 }
 
-:where(.config-container, .quiz-container, .result-container) {
+:where(.config-container, .quiz-container, .result-container, .landing-container, .welcome-container) {
    display: none;
     background: #F0E68C;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
+}
+
+/* Estilos Página inicial */
+.landing-container {
+    display: block;
+    width: 480px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-header {
+    margin-bottom: 30px;
+}
+
+.game-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #2c5aa0, #4a7bc8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(44, 90, 160, 0.3);
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+.game-icon span {
+    font-size: 2.5rem;
+    color: white;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.game-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #2c5aa0;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-subtitle {
+    font-size: 1.1rem;
+    color: #6b6b6b;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-item span.material-symbols-rounded {
+    font-size: 1.8rem;
+    color: #2c5aa0;
+}
+
+.stat-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+.play-section {
+    position: relative;
+    margin: 40px 0;
+}
+
+.play-button {
+    background: linear-gradient(135deg, #d7c94c, #e6d88a);
+    border: none;
+    border-radius: 12px;
+    padding: 18px 40px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #33311d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(215, 201, 76, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    min-width: 200px;
+}
+
+.play-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(215, 201, 76, 0.6);
+    background: linear-gradient(135deg, #e6d88a, #f0e68c);
+}
+
+.play-button:active {
+    transform: translateY(-1px);
+}
+
+.play-button span.material-symbols-rounded {
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-star, .floating-book {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    animation: float 6s ease-in-out infinite;
+}
+
+.star-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.star-2 {
+    top: 30%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.star-3 {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.book-1 {
+    top: 60%;
+    right: 20%;
+    animation-delay: 1s;
+}
+
+.book-2 {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+        opacity: 0.7; 
+    }
+    50% { 
+        transform: translateY(-20px) rotate(180deg); 
+        opacity: 1; 
+    }
+}
+
+/* Estilos Boas Vindas */
+.welcome-container {
+    display: block;
+    width: 480px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-header {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.welcome-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ff6b6b, #ffa726);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+    animation: iconWave 2s ease-in-out infinite;
+}
+
+.welcome-icon span {
+    font-size: 2.2rem;
+    color: white;
+}
+
+@keyframes iconWave {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(10deg) scale(1.1); }
+}
+
+.welcome-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #2c5aa0;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-subtitle {
+    font-size: 1.1rem;
+    color: #6b6b6b;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(215, 201, 76, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2c5aa0, #4a7bc8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+}
+
+.info-icon span {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c5aa0;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: #5a5a5a;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.good-luck-section {
+    margin: 30px 0;
+    padding: 25px;
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border-radius: 15px;
+    border: 2px solid #d7c94c;
+    box-shadow: 0 5px 20px rgba(215, 201, 76, 0.2);
+}
+
+.good-luck-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2c5aa0;
+    margin-bottom: 10px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.motivation-text {
+    font-size: 1rem;
+    color: #4a4a4a;
+    font-weight: 600;
+}
+
+.continue-section {
+    position: relative;
+    margin: 30px 0;
+}
+
+.continue-button {
+    background: linear-gradient(135deg, #d7c94c, #e6d88a);
+    border: none;
+    border-radius: 12px;
+    padding: 18px 35px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #33311d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(215, 201, 76, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    min-width: 220px;
+}
+
+.continue-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(215, 201, 76, 0.6);
+    background: linear-gradient(135deg, #e6d88a, #f0e68c);
+}
+
+.continue-button:active {
+    transform: translateY(-1px);
+}
+
+.continue-button span.material-symbols-rounded {
+    font-size: 1.4rem;
+    animation: slideArrow 2s ease-in-out infinite;
+}
+
+@keyframes slideArrow {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(5px); }
+}
+
+.continue-section .floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.continue-section .floating-star,
+.continue-section .floating-book,
+.continue-section .floating-trophy {
+    position: absolute;
+    font-size: 1.3rem;
+    opacity: 0.8;
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+.continue-section .star-1 {
+    top: 10%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.continue-section .star-2 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.continue-section .star-3 {
+    bottom: 20%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.continue-section .book-1 {
+    top: 60%;
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+.continue-section .trophy-1 {
+    bottom: 10%;
+    right: 15%;
+    animation-delay: 1.5s;
+}
+
+@keyframes gentleFloat {
+    0%, 100% { 
+        transform: translateY(0px) scale(1); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: translateY(-15px) scale(1.1); 
+        opacity: 1; 
+    }
 }
 
 .config-container {
@@ -84,7 +509,7 @@ body {
     flex: 1 1 10%;
 }
 
-.config-container .start-quiz-button, .quiz-footer .next-question-btn, .result-container .try-again-btn {
+.config-container .start-quiz-button, .quiz-footer .next-question-btn {
     color: #33311dbd;
     border: none;
     cursor: pointer;
@@ -101,12 +526,11 @@ body {
     margin-top: 30px;
 }
 
-.config-container .start-quiz-button:hover, .quiz-footer .next-question-btn:hover, .result-container .try-again-btn :hover{
+.config-container .start-quiz-button:hover, .quiz-footer .next-question-btn:hover {
     background: #e0d146be;
 }
 
 .quiz-container {
-    display: block;
     width: 480px;
 
 }
@@ -117,13 +541,42 @@ body {
     padding: 14px 25px;
     justify-content: space-between;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.09);
-
-
 }
 
 .quiz-header .qiz-title {
     font-size: 1.43rem;
     font-weight: 700;
+}
+
+.quiz-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.quit-button {
+    background: #ff6b6b;
+    border: none;
+    border-radius: 6px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.quit-button:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.quit-button span {
+    font-size: 1.2rem;
+    color: white;
 }
 
 .quiz-header  .quiz-timer {
@@ -225,27 +678,88 @@ body {
     text-align: center;
     padding: 40px;
     width: 410px;
-
+    position: relative;
+    overflow: hidden;
 }
 
-.result-container .result-img {
-    width: 110px;
+.result-star {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: gentleStarFloat 3s ease-in-out infinite;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    display: inline-block;
 }
 
-.result-container .result-title {
-    margin-top: 30px;
+@keyframes gentleStarFloat {
+    0%, 100% { 
+        transform: translateY(0px) scale(1); 
+    }
+    50% { 
+        transform: translateY(-8px) scale(1.05); 
+    }
 }
 
-.result-container .result-message {
+.result-title {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #2c5aa0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-message {
     font-size: 1.125rem;
     font-weight: 500;
     margin-top: 15px;
-
+    color: #4a4a4a;
+    line-height: 1.4;
 }
 
 .result-container .try-again-btn {
-    max-top: 30px;
-    padding: 12px 20px;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #d7c94c, #e6d88a);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #33311d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(215, 201, 76, 0.4);
+}
 
+.result-container .try-again-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(215, 201, 76, 0.6);
+    background: linear-gradient(135deg, #e6d88a, #f0e68c);
+}
+
+.back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #6c757d;
+    border: none;
+    border-radius: 6px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+.back-button:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+}
+
+.back-button span {
+    font-size: 1.2rem;
+    color: white;
 }
 
