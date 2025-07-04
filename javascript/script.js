@@ -1,10 +1,22 @@
+// Seletores de elementos
+const landingContainer = document.querySelector(".landing-container");
+const welcomeContainer = document.querySelector(".welcome-container");
+const configContainer = document.querySelector(".config-container");
 const quizContainer = document.querySelector(".quiz-container");
 const answerOptions = document.querySelector(".answer-options");
 const nextQuestionBtn = document.querySelector(".next-question-btn");
 const questionStatus = document.querySelector(".question-status");
 const timerDisplay = document.querySelector(".time-duration");
 const resultContainer = document.querySelector(".result-container");
-const resultMessage = document.querySelector(".result-message"); // Pega o elemento da mensagem final
+const resultMessage = document.querySelector(".result-message");
+
+// Botões de navegação
+const playButton = document.querySelector(".play-button");
+const backButton = document.querySelector(".back-button");
+const continueButton = document.querySelector(".continue-button");
+const startQuizButton = document.querySelector(".start-quiz-button");
+const quitButton = document.querySelector(".quit-button");
+const tryAgainBtn = document.querySelector(".try-again-btn");
 
 // Variáveis globais
 const QUIZ_TIME_LIMIT = 15;
@@ -15,6 +27,39 @@ let numberOfQuestions = 8;
 let currentQuestion = null;
 let correctAnswers = 0;
 const questionIndexHistory = [];
+
+// Funções de navegação
+const showLandingPage = () => {
+    landingContainer.style.display = "block";
+    welcomeContainer.style.display = "none";
+    configContainer.style.display = "none";
+    quizContainer.style.display = "none";
+    resultContainer.style.display = "none";
+};
+
+const showWelcomePage = () => {
+    landingContainer.style.display = "none";
+    welcomeContainer.style.display = "block";
+    configContainer.style.display = "none";
+    quizContainer.style.display = "none";
+    resultContainer.style.display = "none";
+};
+
+const showConfigPage = () => {
+    landingContainer.style.display = "none";
+    welcomeContainer.style.display = "none";
+    configContainer.style.display = "block";
+    quizContainer.style.display = "none";
+    resultContainer.style.display = "none";
+};
+
+const showQuizPage = () => {
+    landingContainer.style.display = "none";
+    welcomeContainer.style.display = "none";
+    configContainer.style.display = "none";
+    quizContainer.style.display = "block";
+    resultContainer.style.display = "none";
+};
 
 // Mostra os resultados do quiz
 const showQuizResults = () => {
@@ -115,24 +160,45 @@ const renderQuestion = () => {
     });
 };
 
-// Inicialização
-quizContainer.style.display = "block";
-renderQuestion();
-
-// Eventos
-nextQuestionBtn.addEventListener("click", renderQuestion);
-
-const tryAgainBtn = document.querySelector(".try-again-btn");
-
-tryAgainBtn.addEventListener("click", () => {
+const resetQuiz = () => {
     // Reseta variáveis
     correctAnswers = 0;
     questionIndexHistory.length = 0;
     currentQuestion = null;
+    resetTimer();
+};
 
-    // Esconde tela de resultado e mostra quiz
-    resultContainer.style.display = "none";
-    quizContainer.style.display = "block";
+// Eventos de navegação
+playButton.addEventListener("click", () => {
+    showWelcomePage();
+});
 
+backButton.addEventListener("click", () => {
+    showLandingPage();
+});
+
+continueButton.addEventListener("click", () => {
+    //showConfigPage();
+    showQuizPage();
     renderQuestion();
 });
+
+startQuizButton.addEventListener("click", () => {
+    // showQuizPage();
+    // renderQuestion();
+});
+
+quitButton.addEventListener("click", () => {
+    resetQuiz();
+    showLandingPage();
+});
+
+nextQuestionBtn.addEventListener("click", renderQuestion);
+
+tryAgainBtn.addEventListener("click", () => {
+    resetQuiz();
+    showLandingPage();
+});
+
+// Inicialização - começar na página inicial
+showLandingPage();
