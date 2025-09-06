@@ -162,11 +162,16 @@ body {
     z-index: 1;
 }
 
-.floating-star, .floating-book {
+.floating-star, .floating-book, .floating-trophy {
     position: absolute;
     font-size: 1.5rem;
     opacity: 0.7;
     animation: float 6s ease-in-out infinite;
+}
+
+.floating-star span, .floating-book span, .floating-trophy span {
+    font-size: 1.5rem;
+    color: #2c5aa0;
 }
 
 .star-1 {
@@ -331,6 +336,15 @@ body {
     color: #2c5aa0;
     margin-bottom: 10px;
     animation: bounce 2s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.good-luck-title span {
+    font-size: 1.5rem;
+    color: #2c5aa0;
 }
 
 @keyframes bounce {
@@ -407,6 +421,13 @@ body {
     font-size: 1.3rem;
     opacity: 0.8;
     animation: gentleFloat 4s ease-in-out infinite;
+}
+
+.continue-section .floating-star span,
+.continue-section .floating-book span,
+.continue-section .floating-trophy span {
+    font-size: 1.3rem;
+    color: #2c5aa0;
 }
 
 .continue-section .star-1 {
@@ -688,6 +709,13 @@ body {
     animation: gentleStarFloat 3s ease-in-out infinite;
     text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
     display: inline-block;
+}
+
+.result-star span {
+    font-size: 5rem;
+    color: #ffd700;
+    font-variation-settings: 'FILL' 1, 'GRAD' 0, 'opsz' 48;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
 }
 
 @keyframes gentleStarFloat {
