@@ -791,3 +791,55 @@ body {
     color: white;
 }
 
+/* Container de Créditos - Ajuste para ficar vertical */
+.credits-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 20px; 
+    background: transparent; 
+    overflow: visible;
+    position: relative; 
+}
+
+.credits-card {
+    background: #fffbe6;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    padding: 10px 25px;
+    width: 90%; 
+    max-width: 400px; 
+    font-size: 0.85rem;
+    color: #444;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.credits-card h4 {
+    margin-top: 6px;
+    margin-bottom: 2px;
+    font-size: 0.95rem;
+    color: #bfa600;
+    font-weight: 700;
+}
+
+.credits-card ul, .credits-card p {
+    margin: 0 0 4px 0;
+    padding: 0;
+    font-size: 0.85rem;
+}
+
+.credits-description {
+    font-size: 0.8rem;
+    margin-top: 4px;
+    color: #888;
+    line-height: 1.2;
+}
